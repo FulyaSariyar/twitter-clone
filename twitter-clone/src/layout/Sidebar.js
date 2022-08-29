@@ -1,46 +1,74 @@
 import React from 'react'
-import { HomeIcon, PopulerIcon, ReplyIcon } from '../icons/Icon'
-import { ExploreIcon } from '../icons/Icon'
-import { NotificationsIcon } from '../icons/Icon'
-import { MessagesIcon } from '../icons/Icon'
-import { BookmarksIcon } from '../icons/Icon'
-import { ListsIcon } from '../icons/Icon'
-import { ProfileIcon } from '../icons/Icon'
-import { MoreIcon } from '../icons/Icon'
-import { ImageIcon } from '../icons/Icon'
-import { GIFIcon } from '../icons/Icon'
-import { PollIcon } from '../icons/Icon'
-import { EmojiIcon } from '../icons/Icon'
-import { ScheduleIcon } from '../icons/Icon'
-import { ReTweetIcon } from '../icons/Icon'
-import { LikeIcon } from '../icons/Icon'
-import { ShareIcon } from '../icons/Icon'
-import { SearchIcon } from '../icons/Icon'
+import SideLink from '../components/SideLink'
+import  twitterLogo from "../images/twitter.svg"
+import {
+    BookmarksIcon,
+    ExploreIcon,
+    HomeIcon,
+    ListsIcon,
+    MessagesIcon,
+    MoreIcon,
+    NotificationsIcon,
+    ProfileIcon,
+  } from "../icons/Icon";
 
+const sideLinks = [
+    {
+      name: "Home",
+      icon: HomeIcon,
+    },
+    {
+      name: "Explore",
+      icon: ExploreIcon,
+    },
+    {
+      name: "Notifications",
+      icon: NotificationsIcon,
+    },
+    {
+      name: "Messages",
+      icon: MessagesIcon,
+    },
+    {
+      name: "Bookmarks",
+      icon: BookmarksIcon,
+    },
+    {
+      name: "Lists",
+      icon: ListsIcon,
+    },
+    {
+      name: "Profile",
+      icon: ProfileIcon,
+    },
+    {
+      name: "More",
+      icon: MoreIcon,
+    },
+  ];
 
 const Sidebar = () => {
   return (
-    <div className="w-72 bg-blue-200">
-      <h1>Sidebar</h1>
-      <HomeIcon></HomeIcon>
-      <ExploreIcon></ExploreIcon>
-      <NotificationsIcon></NotificationsIcon>
-      <MessagesIcon></MessagesIcon>
-      <BookmarksIcon></BookmarksIcon>
-      <ListsIcon></ListsIcon>
-      <ProfileIcon></ProfileIcon>
-      <MoreIcon></MoreIcon>
-      <PopulerIcon className="w-7 h-7"></PopulerIcon>
-      <ImageIcon className="w-7 h-7"></ImageIcon>
-      <GIFIcon className="w-7 h-7"></GIFIcon>
-      <PollIcon className="w-7 h-7"></PollIcon>
-      <EmojiIcon className="w-7 h-7"></EmojiIcon>
-      <ScheduleIcon className="w-7 h-7"></ScheduleIcon>
-      <ReplyIcon className="w-7 h-7"></ReplyIcon>
-      <ReTweetIcon className="w-7 h-7"></ReTweetIcon>
-      <LikeIcon className="w-7 h-7"></LikeIcon>
-      <ShareIcon className="w-7 h-7"></ShareIcon>
-      <SearchIcon className="w-7 h-7"></SearchIcon>
+    <div className="flex flex-col justify-between w-72 px-2">
+    <div>
+        <div className='mt-1 mb-4 ml-1 flex items-center justify-center w-12 h-12 rounded-full hover:bg-gray-lightest transform transition-colors duration-200'>
+        <img src ={twitterLogo} alt ="Twitter Logo" className='w-9 h-9'></img>
+        </div>
+        <nav className='mb-4'>
+        <ul>
+            {sideLinks.map(({ name, icon }) => (
+              <SideLink
+                key={name}
+                name={name}
+                Icon={icon}
+              />
+            ))}
+          </ul>
+        </nav>
+        <button className='bg-primary-base hover:bg-primary-dark text-white shadow-lg rounded-full py-3 px-8 w-11/12 transform transition-colors duration-200'>Tweet</button>
+    </div>
+    <div>Alt Taraf</div>
+      
     </div>
   )
 }
