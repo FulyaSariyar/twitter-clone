@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SideLink from '../components/SideLink'
 import  twitterLogo from "../images/twitter.svg"
 import {
@@ -13,6 +13,7 @@ import {
   } from "../icons/Icon";
 
 const sideLinks = [
+    
     {
       name: "Home",
       icon: HomeIcon,
@@ -48,6 +49,10 @@ const sideLinks = [
   ];
 
 const Sidebar = () => {
+    const[active, setActive] = useState("Home");
+    const handleMenuItemClick = (name) => {
+        setActive(name);
+    }
   return (
     <div className="flex flex-col justify-between w-72 px-2">
     <div>
@@ -61,6 +66,8 @@ const Sidebar = () => {
                 key={name}
                 name={name}
                 Icon={icon}
+                active ={active}
+                onMenuItemClick={handleMenuItemClick}
               />
             ))}
           </ul>
