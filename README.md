@@ -1,14 +1,15 @@
-# Installation
-
- `npm install`
-  <br>
-  `npm start`
 # Twitter Clone
 ## Used Technologies
 
 - Tailwindcss
 - ReactJS
 - Firebase Firestore Database
+# Installation
+
+ `npm install`
+  <br>
+  `npm start`
+
  
  <br>
 
